@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông Tin Tờ Khai Y Tế</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px 100px; }
+        .box { border: 1px solid #28a745; padding: 20px; border-radius: 8px; background-color: #f9fff9; }
+    </style>
+</head>
+<body>
+
+<h2>THÔNG TIN ĐÃ KHAI BÁO THÀNH CÔNG</h2>
+
+<div class="box">
+    <p><strong>Họ và tên:</strong> <span th:text="${declaration.name}"></span></p>
+    <p><strong>Năm sinh:</strong> <span th:text="${declaration.birthYear}"></span></p>
+    <p><strong>Giới tính:</strong> <span th:text="${declaration.gender}"></span></p>
+    <p><strong>Quốc tịch:</strong> <span th:text="${declaration.nationality}"></span></p>
+    <p><strong>CMND/Hộ chiếu:</strong> <span th:text="${declaration.idCard}"></span></p>
+    <p><strong>Phương tiện đi lại:</strong> <span th:text="${declaration.travelInfo}"></span></p>
+    <p><strong>Địa chỉ:</strong> <span th:text="${declaration.address + ', ' + declaration.ward + ', ' + declaration.district + ', ' + declaration.province}"></span></p>
+    <p><strong>Số điện thoại:</strong> <span th:text="${declaration.phone}"></span></p>
+    <p><strong>Triệu chứng Sốt:</strong> <span th:text="${declaration.fever ? 'Có' : 'Không'}"></span></p>
+    <p><strong>Triệu chứng Ho:</strong> <span th:text="${declaration.cough ? 'Có' : 'Không'}"></span></p>
+</div>
+
+<br/>
+<a th:href="@{/medical}" style="display: inline-block; padding: 8px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 4px;">Cập nhật lại Tờ khai</a>
+
+</body>
+</html>
